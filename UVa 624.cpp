@@ -31,34 +31,26 @@ int digitCNT(int n){return ceil(log10(n)+0.00000001);}
 bool cmp(int a, int b){ return a>b;}
 
 int n, track, a, minDis = inf, AnswerSum;
-map<int, bool> mark;
 vector<int> ans, tmp;
 void check(vector<int> v, int sum, int k){
     if(sum > n) return;
-    //vprint(ans);
-    //yo(sum);
     if(n-sum < minDis){
         minDis = n-sum;
         ans = tmp;
         AnswerSum = sum;
     }
     for(int i=k; i<v.size(); i++){
-        if(!mark[i]){
-            mark[i] = true;
-            sum += v[i];
-            tmp.push_back(v[i]);
-            check(v, sum, i+1);
-            mark[i] = false;
-            sum -= v[i];
-            tmp.pop_back();
-        }
+        sum += v[i];
+        tmp.push_back(v[i]);
+        check(v, sum, i+1);
+        sum -= v[i];
+        tmp.pop_back();
     }
 }
 
 void solve(int n){
     ans.clear();
     tmp.clear();
-    mark.clear();
     minDis = inf;
     cin >> track;
     vector<int> v;
