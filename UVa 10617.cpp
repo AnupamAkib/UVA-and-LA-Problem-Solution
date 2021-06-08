@@ -43,41 +43,6 @@ bool cmp(pair<lli, lli> a, pair<lli, lli> b){
     return a.ff<b.ff;
 }
 
-string sum(string a, string b){
-    string ans;
-    int len_a=a.size();
-    int len_b=b.size();
-    if(len_a<len_b){
-        for(int i=1; i<=abs(len_a-len_b); i++){
-            a.insert(a.begin(), '0');
-        }
-    }
-    else if(len_a>len_b){
-        for(int i=1; i<=abs(len_a-len_b); i++){
-            b.insert(b.begin(), '0');
-        }
-    }
-    int carry=0, tmp;
-    for(int i=a.size()-1; i>=0; i--){
-        tmp=(a[i]-48 + b[i]-48) + carry;
-        if(tmp>=10){
-            carry = 1;
-            ans.insert(ans.begin(), (tmp%10)+48);
-        }
-        else{
-            carry = 0;
-            ans.insert(ans.begin(), tmp+48);
-        }
-    }
-    if(carry!=0){
-        ans.insert(ans.begin(), carry+48);
-    }
-    while(ans[0]=='0'){
-        ans.erase(ans.begin());
-    }
-    return ans;
-}
-
 lli DP[100][100];
 string s;
 
