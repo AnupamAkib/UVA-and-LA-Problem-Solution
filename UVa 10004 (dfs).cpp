@@ -55,8 +55,6 @@ void dfs(int src, int d){
             vis[nd] = true;
             dis[nd] = d;
             dfs(nd, d+1);
-            vis[nd] = false;
-            dis[nd] = 0;
         }
         else{
             //print((d - dis[nd]))
