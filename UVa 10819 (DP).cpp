@@ -1,10 +1,3 @@
-/*
-////Problem statement: 
-https://docs.google.com/document/d/1AjrdQzyzl9JDOQJTfUkdy1Lbj5jT5LS06Vk1Tq7pdLI/edit
-////View this code for bitwise operations on Mask:
-https://gist.github.com/lelouche556/d05095cadb25f0a0d267bf379ef71990
-*/
-
 /*BISMILLAHIR RAHMANIR RAHIM*/
 #include<bits/stdc++.h>
 #define lli long long int
